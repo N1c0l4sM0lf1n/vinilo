@@ -1,0 +1,12 @@
+package coleccionVinilos;
+
+public class Barco extends Vehiculo {
+    public Barco(String marca, String modelo) {
+        super(marca, modelo);
+    }
+
+    @Override
+    public void mover() {
+        System.out.println("El barco " + marca + " navega por el mar.");
+    }
+}

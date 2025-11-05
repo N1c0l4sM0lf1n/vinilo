@@ -27,15 +27,6 @@ public class ColeccionVinilos {
         return MAX_VINILOS - vinilos.size();
     }
 
-    public boolean buscarViniloPorArtista(String artista) {
-        for (Vinilo v : vinilos) {
-            if (v.getArtista().equalsIgnoreCase(artista)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public void mostrarColeccion() {
         if (vinilos.isEmpty()) {
             System.out.println("La colección está vacía.");
@@ -48,7 +39,7 @@ public class ColeccionVinilos {
     }
 
     public void mostrarBusquedaPorArtista(String artista) {
-        System.out.println("Buscando vinilos de: " + artista);
+        System.out.println("\nBuscando vinilos de: " + artista);
         boolean encontrado = false;
         for (Vinilo v : vinilos) {
             if (v.getArtista().equalsIgnoreCase(artista)) {

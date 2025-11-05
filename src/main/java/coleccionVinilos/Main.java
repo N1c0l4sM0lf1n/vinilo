@@ -2,28 +2,36 @@ package coleccionVinilos;
 
 public class Main {
     public static void main(String[] args) {
-        ColeccionVinilos coleccion = new ColeccionVinilos();
 
-        coleccion.agregarVinilo("Iron Maiden", "Iron Maiden", "1980");
-        coleccion.agregarVinilo("Iron Maiden", "Killers", "1981");
-        coleccion.agregarVinilo("Iron Maiden", "The number of the beast", "1982");
-        coleccion.agregarVinilo("AC-DC", "Back in black", "1980");
-        coleccion.agregarVinilo("AC-DC", "Highway to Hell", "1979");
-        coleccion.agregarVinilo("AC-DC", "Who made who", "1986");
-        coleccion.agregarVinilo("Judas Priest", "British Steel", "1980");
-        coleccion.agregarVinilo("Judas Priest", "Painkiller", "1990");
-        coleccion.agregarVinilo("Judas Priest", "Defenders of the faith", "1984");
-        coleccion.agregarVinilo("Kiss", "Destroyer", "1976");
+        Coleccionista coleccionista = new Coleccionista("Pepe", 35);
+        coleccionista.agregarVinilo("Iron Maiden", "The Number of the Beast", "1982");
+        coleccionista.agregarVinilo("AC-DC", "Highway to Hell", "1979");
+        coleccionista.agregarVinilo("Kiss", "Destroyer", "1976");
 
-        System.out.println("Espacio máximo colección: 100");
-        System.out.println("Total vinilos: " + coleccion.totalVinilos());
-        System.out.println("Espacios disponibles: " + coleccion.espaciosDisponibles());
-        System.out.println();
+        coleccionista.mostrarInfo();
 
-        String artista = "AC-DC";
-        coleccion.mostrarBusquedaPorArtista(artista);
+        System.out.println("\nBuscar vinilos de AC-DC:");
+        coleccionista.getColeccion().mostrarBusquedaPorArtista("AC-DC");
 
-        System.out.println();
-        coleccion.mostrarColeccion();
+        System.out.println("\n=== Animales ===");
+        Animal perro = new Perro("Rocky", 5);
+        Animal gato = new Gato("Michi", 3);
+        perro.hacerSonido();
+        gato.hacerSonido();
+
+        System.out.println("\n=== Universidad ===");
+        Universidad u = new Universidad("Universidad de Chile");
+        Facultad f1 = new Facultad("Facultad de Ingeniería");
+        f1.agregarDepartamento(new Departamento("Informática"));
+        f1.agregarDepartamento(new Departamento("Mecánica"));
+        u.agregarFacultad(f1);
+        u.mostrarEstructura();
+
+        // --- Caso 4: Empresa con Vehículos ---
+        System.out.println("\n=== Empresa de Transporte ===");
+        Empresa e = new Empresa("TransNaviera S.A.");
+        e.agregarVehiculo(new Moto("Yamaha", "MT-09"));
+        e.agregarVehiculo(new Barco("Titanic", "Clase Olímpica"));
+        e.mostrarVehiculos();
     }
 }
